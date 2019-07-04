@@ -22,7 +22,8 @@ local default_configuration = {
 
     das = {
         start = 12,
-        period = 2
+        period = 2,
+		amount = 1
     }
 }
 
@@ -86,11 +87,13 @@ function Controller.update(self)
 			if elapsed_delay >= self.game.configuration['das']['start'] and
 				elapsed_delay % self.game.configuration['das']['period'] == 0 then
 				
-				if key == self.key_left then
-					self.game:curr_piece():move_left()
-				
-				elseif key == self.key_right then
-					self.game:curr_piece():move_right()
+				for amount = 1, self.game.configuration['das']['amount'] do
+					if key == self.key_left then
+						self.game:curr_piece():move_left()
+					
+					elseif key == self.key_right then
+						self.game:curr_piece():move_right()
+					end
 				end
 			end
 		end

@@ -7,8 +7,8 @@ function Visualizer.new(game)
 	self.game = game
 	self.render_rect = function() end
 	
-	self.width = 640
-	self.height = 480
+	self.width = 160
+	self.height = 50
 	
 	self.mino_size = math.floor(self.height * 0.8 / 20)
 	
@@ -212,7 +212,7 @@ function Visualizer.render(self, redraw_playfield)
 		self.playfield_height
 	)
 	
-	self:draw_playfield_grid(self.grid_width / 2)
+	-- self:draw_playfield_grid(self.grid_width / 2)
 	self:draw_playfield_mino()
 	self:draw_next_hold()
 end
